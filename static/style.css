@@ -1,0 +1,54 @@
+body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; padding: 10px; }
+.container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.hidden { display: none; }
+h1, h2, h3 { text-align: center; color: #333; }
+input { width: 90%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; display: block; margin-left: auto; margin-right: auto;}
+button { width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 5px; }
+button:hover { opacity: 0.9; }
+button:disabled { background: #ccc; cursor: not-allowed; }
+
+/* Scoreboard */
+.score-board {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #006064;
+    margin-bottom: 20px;
+    border: 2px solid #4dd0e1;
+}
+
+/* Tabs */
+.tab-buttons { display: flex; gap: 10px; margin: 15px 0; }
+.tab-buttons button { flex: 1; background: #eee; color: #555; }
+.tab-buttons button.active { background: #333; color: white; }
+
+/* Camera */
+#live-preview { width: 100%; height: 250px; background: black; border-radius: 8px; object-fit: cover; margin-bottom: 10px; }
+.rec-controls { display: flex; gap: 10px; }
+#btn-start { background: #d32f2f; }
+#btn-stop { background: #444; }
+
+/* Share Button */
+.share-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: black;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 0 #b8860b;
+}
+.share-btn:active { transform: translateY(4px); box-shadow: none; }
+
+/* Feed Cards */
+.post-card { background: #fff; margin-bottom: 20px; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; }
+.card-happy { border-top: 8px solid #FFD700; }
+.card-sad { border-top: 8px solid #1E90FF; }
+.card-angry { border-top: 8px solid #FF4500; }
+
+.post-card img, .post-card video { width: 100%; border-radius: 8px; margin-top: 10px; }
+.logout-btn { background: #333; margin-top: 30px; }
+
+/* Emotion Radio Buttons */
+.emotion-selector { display: flex; justify-content: space-around; margin-bottom: 15px; }
+.emotion-selector label { cursor: pointer; }
