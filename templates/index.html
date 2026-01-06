@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareYourMoment</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>ShareYourMoment</h1>
+            <p>Capture emotions. Earn Bubbles.</p>
+        </header>
+
+        <div id="auth-section">
+            <div class="form-box">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-pass" placeholder="Password">
+                <button onclick="login()">Log In</button>
+                <p>New here? <a href="#" onclick="toggleAuth()">Register</a></p>
+            </div>
+            
+            <div class="form-box hidden" id="register-box">
+                <h2>Register</h2>
+                <input type="email" id="reg-email" placeholder="Email">
+                <input type="password" id="reg-pass" placeholder="Password">
+                <button onclick="register()">Sign Up</button>
+                <p>Have an account? <a href="#" onclick="toggleAuth()">Login</a></p>
+            </div>
+        </div>
+
+        <div id="dashboard-section" class="hidden">
+            
+            <div class="score-board">
+                <span>🫧 Bubbles: <strong id="user-points">0</strong></span>
+            </div>
+
+            <div class="upload-box">
+                <h3>How are you feeling?</h3>
+                <div class="emotion-selector">
+                    <label><input type="radio" name="emotion" value="happy" checked> Happy 😊</label>
+                    <label><input type="radio" name="emotion" value="sad"> Sad 😢</label>
+                    <label><input type="radio" name="emotion" value="angry"> Angry 😡</label>
+                </div>
+
+                <div class="tab-buttons">
+                    <button onclick="switchTab('upload')" id="tab-upload" class="active">Upload File</button>
+                    <button onclick="switchTab('live')" id="tab-live">Record Live 🔴</button>
+                </div>
+
+                <div id="mode-upload" class="mode-section">
+                    <input type="file" id="file-input" accept="image/*,video/*">
+                </div>
+
+                <div id="mode-live" class="mode-section hidden">
+                    <video id="live-preview" autoplay muted playsinline></video>
+                    <div class="rec-controls">
+                        <button id="btn-start" onclick="startRecording()">Start Recording</button>
+                        <button id="btn-stop" onclick="stopRecording()" disabled>Stop</button>
+                    </div>
+                    <p id="rec-status">Camera ready...</p>
+                </div>
+
+                <button onclick="uploadMoment()" class="share-btn">Share Moment (+10 🫧)</button>
+            </div>
+
+            <hr>
+
+            <div id="feed-container">
+                </div>
+            
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
